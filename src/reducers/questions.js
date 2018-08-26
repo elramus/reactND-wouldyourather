@@ -7,6 +7,18 @@ const questions = (state = {}, action) => {
         ...state,
         ...action.questions
       }
+    case C.ANSWER_QUESTION:
+      const { questionId, userId, option} = action
+      return {
+        ...state,
+        [questionId]: {
+          ...state[questionId],
+          [option]: {
+            ...state[questionId][option],
+            votes: [ ...state[questionId][option].votes, userId]
+          }
+        }
+      }
     default:
       return state
   }

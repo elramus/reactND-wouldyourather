@@ -1,0 +1,18 @@
+.site-nav {
+  li {
+    display: inline-block;
+    margin-right: 3em;
+    a {
+      text-transform: uppercase;
+      font-weight: bold;
+      @include ms-1;
+      color:$middle-gray;
+      &.current {
+        color: $dark-gray;
+      }
+      &:hover {
+        color: $dark-gray;
+      }
+    }
+  }
+}

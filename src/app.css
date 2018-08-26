@@ -1,4 +1,160 @@
+h1 {
+  font-size: 1.95em;
+  font-family: "Chelsea Market";
+  color: #812296; }
+
+h2 {
+  font-size: 1.56em; }
+
+h3 {
+  font-size: 1.25em; }
+
+h4 {
+  font-size: 1em; }
+
+h5 {
+  font-size: .8em;
+  text-transform: uppercase;
+  font-weight: normal; }
+
+p {
+  font-size: 1em; }
+
+a {
+  text-decoration: none; }
+
 * {
   border: 0;
   padding: 0;
   margin: 0; }
+
+html, body {
+  background: #f4f4f4; }
+
+body {
+  font-size: 1em;
+  font-family: "Catamaran", "Sans-serif";
+  color: #444; }
+
+.site-header, .question-preview {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  background: #fff; }
+
+button, .btn-accent {
+  cursor: pointer; }
+
+.btn-accent {
+  border-radius: 4px;
+  width: 13em;
+  height: 4em; }
+
+.btn-accent {
+  background: #812296;
+  color: #fff;
+  font-family: "Chelsea Market"; }
+  .btn-accent:hover {
+    background: #9327ab; }
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  padding: .75em 1.25em; }
+
+.site-header__right {
+  display: flex;
+  align-items: center; }
+  .site-header__right .sign-out {
+    margin-right: 2em;
+    background: none; }
+    .site-header__right .sign-out svg {
+      font-size: 1.25em;
+      fill: #444; }
+    .site-header__right .sign-out:hover svg {
+      fill: #812296; }
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; }
+  .loading svg {
+    font-size: 1.95em;
+    animation: spin 500ms linear infinite; }
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+
+.site-nav li {
+  display: inline-block;
+  margin-right: 3em; }
+  .site-nav li a {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: .8em;
+    color: #bbb; }
+    .site-nav li a.current {
+      color: #444; }
+    .site-nav li a:hover {
+      color: #444; }
+
+.user-badge {
+  display: flex;
+  align-items: center; }
+  .user-badge span {
+    text-transform: uppercase;
+    font-size: .8em; }
+  .user-badge .avatar {
+    display: inline-block;
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 100%;
+    background-size: cover;
+    background-position: center center;
+    margin-left: 1em; }
+
+.question-type-filter {
+  text-align: center; }
+  .question-type-filter li {
+    display: inline-block;
+    margin: 1.5em 2em;
+    padding: .5em 1em;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: .8em;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #bbb;
+    letter-spacing: .5px; }
+  .question-type-filter .active {
+    color: #fff;
+    background: rgba(129, 34, 150, 0.45); }
+
+.question-preview {
+  padding: 2em;
+  max-width: 40em;
+  margin: 0 auto 1em auto; }
+  .question-preview span, .question-preview p {
+    color: #444; }
+
+.question-preview {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .question-preview span {
+    font-size: .8em; }
+  .question-preview p {
+    font-size: 1.25em; }
+    .question-preview p.chosen {
+      color: #812296;
+      font-weight: bold; }
+    .question-preview p svg {
+      position: relative;
+      margin-left: .35em;
+      top: .15em; }

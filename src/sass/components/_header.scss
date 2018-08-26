@@ -1,0 +1,24 @@
+.site-header {
+  @extend %card;
+  display: flex;
+  justify-content: space-between;
+  padding: .75em 1.25em;
+}
+
+.site-header__right {
+  display: flex;
+  align-items: center;
+  .sign-out {
+    margin-right: 2em;
+    background: none;
+    svg {
+      @include ms1;
+      fill: $dark-gray;
+    }
+    &:hover {
+      svg {
+        fill: $primary-accent;
+      }
+    }
+  }
+}

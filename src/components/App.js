@@ -1,7 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
+import Header from './Header'
 import SignIn from './SignIn'
+import QuestionList from './QuestionList';
+import Question from './Question'
+import Loading from './Loading'
 import {
   _getUsers,
   _getQuestions
@@ -22,25 +26,36 @@ class App extends Component {
   }
 
   render() {
-    const { authedUser } = this.props
+    const { authedUser, questions } = this.props
+
+    if (authedUser === null) {
+      return  <SignIn />
+    }
+
+    if (Object.keys(questions).length === 0) {
+      return <Loading />
+    }
+
     return (
       <BrowserRouter>
-        {!authedUser
-          ? <SignIn />
-          : <Switch>
-              <Route path='/' render={() => (
-                <h1>you're signed in</h1>
-              )} />
-            </Switch>
-        }
+        <Fragment>
+          <Header />
+          <Switch>
+            <Route path='/' exact component={QuestionList} />
+            <Route path='/question/:questionId' exact component={Question} />
+            {/* <Route path='/new' component={ } /> */}
+            {/* <Route path='/leaderboard' component={ } /> */}
+          </Switch>
+        </Fragment>
       </BrowserRouter>
     );
   }
 }
 
-function mapStateToProps({ authedUser }) {
+function mapStateToProps({ authedUser, questions }) {
   return {
-    authedUser
+    authedUser,
+    questions
   }
 }
 export default connect(mapStateToProps)(App)

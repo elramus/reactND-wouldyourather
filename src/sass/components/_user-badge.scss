@@ -1,0 +1,17 @@
+.user-badge {
+  display: flex;
+  align-items: center;
+  span {
+    text-transform: uppercase;
+    @include ms-1;
+  }
+  .avatar {
+    display: inline-block;
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 100%;
+    background-size: cover;
+    background-position: center center;
+    margin-left: 1em;
+  }
+}

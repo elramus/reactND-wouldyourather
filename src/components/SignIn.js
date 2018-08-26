@@ -8,7 +8,9 @@ class SignIn extends Component {
   }
 
   onUserDropdownChange = (e) => {
-    this.setState({ selectedUser: e.target.value })
+    this.setState({
+      selectedUser: e.target.value
+    })
   }
 
   onGoClick = () => {

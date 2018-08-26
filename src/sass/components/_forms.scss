@@ -1,0 +1,24 @@
+%basic-button {
+  cursor: pointer;
+}
+
+%fancy-button {
+  border-radius: 4px;
+  width: 13em;
+  height: 4em;
+}
+
+button {
+  @extend %basic-button;
+}
+
+.btn-accent {
+  @extend button;
+  @extend %fancy-button;
+  background: $primary-accent;
+  color: #fff;
+  font-family: $accent-font;
+  &:hover {
+    background:lighten($primary-accent, 5%);
+  }
+}
