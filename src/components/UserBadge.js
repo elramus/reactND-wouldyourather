@@ -14,9 +14,9 @@ class UserBadge extends Component {
   }
 }
 
-function mapStateToProps({ authedUser, users }) {
+function mapStateToProps({ users }, ownProps) {
   return {
-    user: users[authedUser] || { }
+    user: users[ownProps.user]
   }
 }
 

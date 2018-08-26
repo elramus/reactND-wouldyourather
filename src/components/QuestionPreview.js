@@ -20,20 +20,26 @@ class QuestionPreview extends Component {
         {!votedOne && !votedTwo && (
           <Fragment>
             <div className="question-text-preview">
-              <span>Would you rather:</span>
+              <h6>Would you rather:</h6>
               <p>{question.optionOne.text} or ...</p>
             </div>
             <Link to={`/question/${question.id}`}>
-              <button className='btn-accent'>View!</button>
+              <button className='btn-accent'>Answer!</button>
             </Link>
           </Fragment>
         )}
         {(votedOne || votedTwo) && (
           <Fragment>
             <div className="question-text-preview">
-              <span>Would you rather:</span>
-              <p className={votedOne ? 'chosen' : ''}>{question.optionOne.text}{votedOne && <FaCheck />}</p>
-              <p className={votedTwo ? 'chosen' : ''}>{question.optionTwo.text}{votedTwo && <FaCheck />}</p>
+              <h6>Would you rather:</h6>
+              <ul>
+                <li className={votedOne ? 'chosen' : ''}>
+                  <p>{question.optionOne.text}{votedOne && <FaCheck />}</p>
+                </li>
+                <li className={votedTwo ? 'chosen' : ''}>
+                  <p>{question.optionTwo.text}{votedTwo && <FaCheck />}</p>
+                </li>
+              </ul>
             </div>
             <Link to={`/question/${question.id}`}>
               <button className='btn-accent'>Compare Results!</button>

@@ -22,3 +22,9 @@ button {
     background:lighten($primary-accent, 5%);
   }
 }
+
+input[type='radio'] {
+  position: relative;
+  top: -.15em;
+  margin-right: 1em;
+}

@@ -36,9 +36,12 @@ body {
   font-family: "Catamaran", "Sans-serif";
   color: #444; }
 
-.site-header, .question-preview {
+.site-header, .question-preview, .question-form {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   background: #fff; }
+
+li {
+  list-style-type: none; }
 
 button, .btn-accent {
   cursor: pointer; }
@@ -54,6 +57,11 @@ button, .btn-accent {
   font-family: "Chelsea Market"; }
   .btn-accent:hover {
     background: #9327ab; }
+
+input[type='radio'] {
+  position: relative;
+  top: -.15em;
+  margin-right: 1em; }
 
 .site-header {
   display: flex;
@@ -136,25 +144,46 @@ button, .btn-accent {
     color: #fff;
     background: rgba(129, 34, 150, 0.45); }
 
-.question-preview {
+.question-preview, .question-form {
   padding: 2em;
   max-width: 40em;
   margin: 0 auto 1em auto; }
-  .question-preview span, .question-preview p {
+  .question-preview h6, .question-form h6, .question-preview p, .question-form p {
     color: #444; }
+  .question-preview h6, .question-form h6 {
+    display: block;
+    font-size: .8em; }
+  .question-preview p, .question-form p {
+    display: inline-block;
+    font-size: 1.25em; }
+    .question-preview p svg, .question-form p svg {
+      position: relative;
+      margin-left: .35em;
+      top: .15em; }
+  .question-preview .chosen p, .question-form .chosen p {
+    color: #812296;
+    font-weight: bold; }
 
 .question-preview {
   display: flex;
   justify-content: space-between;
   align-items: center; }
-  .question-preview span {
+
+.question-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: top;
+  margin-top: 1em; }
+  .question-form.answered input {
+    display: none; }
+  .question-form.answered label {
+    cursor: default; }
+  .question-form.answered .question-meta {
+    margin-left: 1em;
     font-size: .8em; }
-  .question-preview p {
-    font-size: 1.25em; }
-    .question-preview p.chosen {
-      color: #812296;
-      font-weight: bold; }
-    .question-preview p svg {
-      position: relative;
-      margin-left: .35em;
-      top: .15em; }
+  .question-form svg {
+    display: none; }
+  .question-form button, .question-form .btn-accent {
+    margin-top: 1em; }
+  .question-form .chosen svg {
+    display: inline-block; }

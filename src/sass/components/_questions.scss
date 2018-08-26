@@ -1,7 +1,3 @@
-.question-list-container {
-
-}
-
 .question-type-filter {
   text-align: center;
   li {
@@ -27,8 +23,27 @@
   padding: 2em;
   max-width: 40em;
   margin: 0 auto 1em auto;
-  span, p {
+  h6, p {
     color: $dark-gray;
+  }
+  h6 {
+    display: block;
+    @include ms-1;
+  }
+  p {
+    display: inline-block;
+    @include ms1;
+    svg {
+      position: relative;
+      margin-left: .35em;
+      top: .15em;
+    }
+  }
+  .chosen {
+    p {
+      color: $primary-accent;
+      font-weight: bold;
+    }
   }
 }
 
@@ -37,22 +52,35 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.question-form {
+  @extend %question;
+  display: flex;
+  justify-content: space-between;
+  align-items: top;
+  margin-top: 1em;
   &.answered {
-    // background: rgba(255,255,255,.35);
-  }
-  span {
-    @include ms-1;
-  }
-  p {
-    @include ms1;
-    &.chosen {
-      color: $primary-accent;
-      font-weight: bold;
+    input {
+      display: none;
     }
+    label {
+      cursor: default;
+    }
+    .question-meta {
+      margin-left: 1em;
+      @include ms-1;
+    }
+  }
+  svg {
+    display: none;
+  }
+  button {
+    margin-top: 1em;
+  }
+  .chosen {
     svg {
-      position: relative;
-      margin-left: .35em;
-      top: .15em;
+      display: inline-block;
     }
   }
 }

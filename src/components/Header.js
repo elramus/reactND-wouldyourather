@@ -12,6 +12,8 @@ class Header extends Component {
   }
 
   render() {
+    const { authedUser } = this.props
+
     return (
       <header className='site-header'>
         <div className="site-header__left">
@@ -24,11 +26,17 @@ class Header extends Component {
           <button className='sign-out react-icon' onClick={this.onSignOut} title='Sign Out'>
             <FaSignOutAlt />
           </button>
-          <UserBadge />
+          <UserBadge user={authedUser} />
         </div>
       </header>
     )
   }
 }
 
-export default connect()(Header)
+function mapStateToProps({ authedUser }) {
+  return {
+    authedUser
+  }
+}
+
+export default connect(mapStateToProps)(Header)
