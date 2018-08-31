@@ -23,12 +23,11 @@
   padding: 2em;
   max-width: 40em;
   margin: 0 auto 1em auto;
-  h6, p {
+  h4, p {
     color: $dark-gray;
   }
-  h6 {
+  h4 {
     display: block;
-    @include ms-1;
   }
   p {
     display: inline-block;
@@ -45,6 +44,10 @@
       font-weight: bold;
     }
   }
+  .user-badge {
+    position: relative;
+    top: -.55em;
+  }
 }
 
 .question-preview {
@@ -59,7 +62,7 @@
   display: flex;
   justify-content: space-between;
   align-items: top;
-  margin-top: 1em;
+  margin-top: 4.5em;
   &.answered {
     input {
       display: none;
@@ -68,7 +71,7 @@
       cursor: default;
     }
     .question-meta {
-      margin-left: 1em;
+      display:block;
       @include ms-1;
     }
   }
@@ -81,6 +84,34 @@
   .chosen {
     svg {
       display: inline-block;
+    }
+  }
+}
+
+.question-new {
+  @extend %question;
+  margin-top: 4.5em;
+  form {
+    display: flex;
+    margin-bottom: 1em;
+    justify-content: stretch;
+    .left {
+      flex: auto;
+      h4 {
+        // margin-bottom: 1em;
+      }
+      span {
+        color: $middle-gray;
+      }
+    }
+    .right {
+      margin-left: auto;
+      padding-left: 2em;
+    }
+    input {
+      display: block;
+      width: 100%;
+      margin: .5em 0;
     }
   }
 }

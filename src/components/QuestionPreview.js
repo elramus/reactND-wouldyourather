@@ -20,7 +20,7 @@ class QuestionPreview extends Component {
         {!votedOne && !votedTwo && (
           <Fragment>
             <div className="question-text-preview">
-              <h6>Would you rather:</h6>
+              <h4>Would you rather:</h4>
               <p>{question.optionOne.text} or ...</p>
             </div>
             <Link to={`/question/${question.id}`}>
@@ -31,7 +31,7 @@ class QuestionPreview extends Component {
         {(votedOne || votedTwo) && (
           <Fragment>
             <div className="question-text-preview">
-              <h6>Would you rather:</h6>
+              <h4>Would you rather:</h4>
               <ul>
                 <li className={votedOne ? 'chosen' : ''}>
                   <p>{question.optionOne.text}{votedOne && <FaCheck />}</p>

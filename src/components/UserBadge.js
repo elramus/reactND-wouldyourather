@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 
 class UserBadge extends Component {
   render() {
@@ -21,3 +22,7 @@ function mapStateToProps({ users }, ownProps) {
 }
 
 export default connect(mapStateToProps)(UserBadge)
+
+UserBadge.propTypes = {
+  user: PropTypes.object.isRequired
+}

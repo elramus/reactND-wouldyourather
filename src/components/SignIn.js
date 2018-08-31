@@ -23,7 +23,7 @@ class SignIn extends Component {
     return (
       <div>
         <h1>Would You Rather?</h1>
-        <h3>First things first. Who are you?</h3>
+        <h4>First things first. Who are you?</h4>
         <select value={this.state.selectedUser} onChange={this.onUserDropdownChange}>
           <option value='default' disabled>Select User</option>
           {Object.keys(users).map(id =>

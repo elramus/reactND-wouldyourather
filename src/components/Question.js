@@ -7,7 +7,6 @@ import { FaCheck } from 'react-icons/fa'
 
 class Question extends Component {
   state = {
-    votedFor: this.props.votedFor,
     selectedOption: this.props.votedFor
   }
 
@@ -24,7 +23,9 @@ class Question extends Component {
   render() {
     const { selectedOption } = this.state
     const { authedUser, question, questionAnswered, votedFor } = this.props
-
+    const answerButtonDisabled = selectedOption === null
+      ? true
+      : false
     const questionClasses = classNames({
       'question-form': true,
       'answered': votedFor !== null
@@ -36,61 +37,61 @@ class Question extends Component {
     return (
       <div className={questionClasses}>
         <div className='left'>
-          <h6>Would you rather:</h6>
-            <ul>
-              <li className={votedFor === 'optionOne' ? 'chosen' : ''}>
-                <input
-                  type='radio'
-                  id='optionOne'
-                  name='options'
-                  value='optionOne'
-                  onChange={this.onOptionChoose}
-                  checked={selectedOption === 'optionOne'}
-                />
-                <label htmlFor='optionOne'>
-                  <p>
-                    {question.optionOne.text}
-                    {votedFor === 'optionOne' && (
-                      <Fragment>
-                        <FaCheck />
-                        <span className='question-meta'>{votesForTwo / (votesForOne + votesForTwo) * 100}% of users chose this</span>
-                      </Fragment>
-                    )}
-                  </p>
-                </label>
-              </li>
-              <li className={votedFor === 'optionTwo' ? 'chosen' : ''}>
-                <input
-                  type='radio'
-                  id='optionTwo'
-                  name='options'
-                  value='optionTwo'
-                  onChange={this.onOptionChoose}
-                  checked={selectedOption === 'optionTwo'}
-                />
-                <label htmlFor='optionTwo'>
-                  <p>
-                    {question.optionTwo.text}
-                    {votedFor === 'optionTwo' && (
-                      <Fragment>
-                        <FaCheck />
-                        <span className='question-meta'>{votesForTwo / (votesForOne + votesForTwo) * 100}% of users chose this</span>
-                      </Fragment>
-                    )}
-                  </p>
-                </label>
-              </li>
-            </ul>
-            {!questionAnswered && (
-              <button className='btn-accent' onClick={this.onAnswerButton}>Final Answer!</button>
-            )}
-          </div>
-          {authedUser && (
-            <div className="right">
-              <UserBadge user={question.author} />
-            </div>
+          <h4>Would you rather:</h4>
+          <ul>
+            <li className={votedFor === 'optionOne' ? 'chosen' : ''}>
+              <input
+                type='radio'
+                id='optionOne'
+                name='options'
+                value='optionOne'
+                onChange={this.onOptionChoose}
+                checked={selectedOption === 'optionOne'}
+              />
+              <label htmlFor='optionOne'>
+                <p>
+                  {question.optionOne.text}
+                  {votedFor === 'optionOne' && (
+                    <Fragment>
+                      <FaCheck />
+                      <span className='question-meta'>{Math.floor(votesForOne / (votesForOne + votesForTwo) * 100)}% of users chose this</span>
+                    </Fragment>
+                  )}
+                </p>
+              </label>
+            </li>
+            <li className={votedFor === 'optionTwo' ? 'chosen' : ''}>
+              <input
+                type='radio'
+                id='optionTwo'
+                name='options'
+                value='optionTwo'
+                onChange={this.onOptionChoose}
+                checked={selectedOption === 'optionTwo'}
+              />
+              <label htmlFor='optionTwo'>
+                <p>
+                  {question.optionTwo.text}
+                  {votedFor === 'optionTwo' && (
+                    <Fragment>
+                      <FaCheck />
+                      <span className='question-meta'>{Math.floor(votesForTwo / (votesForOne + votesForTwo) * 100)}% of users chose this</span>
+                    </Fragment>
+                  )}
+                </p>
+              </label>
+            </li>
+          </ul>
+          {!questionAnswered && (
+            <button className='btn-accent' onClick={this.onAnswerButton} disabled={answerButtonDisabled} >Final Answer!</button>
           )}
         </div>
+        {authedUser && (
+          <div className="right">
+            <UserBadge user={question.author} />
+          </div>
+        )}
+      </div>
     )
   }
 }

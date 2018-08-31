@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import Nav from './Nav';
 import UserBadge from './UserBadge';
@@ -39,4 +39,5 @@ function mapStateToProps({ authedUser }) {
   }
 }
 
-export default connect(mapStateToProps)(Header)
+// withRouter is necessary for NavLinks in Nav component to work
+export default withRouter(connect(mapStateToProps)(Header))

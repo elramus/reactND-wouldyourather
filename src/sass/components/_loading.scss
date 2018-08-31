@@ -9,8 +9,13 @@
   left: 0;
   svg {
     @include ms3;
+    color:rgba($primary-accent, .25);
     animation: spin 500ms linear infinite;
   }
+}
+
+.spinning {
+  animation: spin 500ms linear infinite;
 }
 
 @keyframes spin {

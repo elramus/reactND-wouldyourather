@@ -6,7 +6,7 @@ class Nav extends Component {
     return (
       <ul className='site-nav'>
         <li>
-          <NavLink activeClassName='current' to='/'>Questions</NavLink>
+          <NavLink activeClassName='current' exact to='/'>Questions</NavLink>
         </li>
         <li>
           <NavLink activeClassName='current' to='/new'>Ask a New Question</NavLink>

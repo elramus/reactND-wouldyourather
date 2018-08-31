@@ -5,6 +5,7 @@ import Header from './Header'
 import SignIn from './SignIn'
 import QuestionList from './QuestionList';
 import Question from './Question'
+import NewQuestion from './NewQuestion'
 import Loading from './Loading'
 import {
   _getUsers,
@@ -42,8 +43,8 @@ class App extends Component {
           <Header />
           <Switch>
             <Route path='/' exact component={QuestionList} />
-            <Route path='/question/:questionId' exact component={Question} />
-            {/* <Route path='/new' component={ } /> */}
+            <Route path='/question/:questionId' component={Question} />
+            <Route path='/new' component={NewQuestion} />
             {/* <Route path='/leaderboard' component={ } /> */}
           </Switch>
         </Fragment>

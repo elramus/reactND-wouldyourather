@@ -10,7 +10,9 @@ h3 {
   font-size: 1.25em; }
 
 h4 {
-  font-size: 1em; }
+  font-size: 1em;
+  font-family: "Chelsea Market";
+  margin-bottom: 0.5em; }
 
 h5 {
   font-size: .8em;
@@ -26,7 +28,8 @@ a {
 * {
   border: 0;
   padding: 0;
-  margin: 0; }
+  margin: 0;
+  box-sizing: border-box; }
 
 html, body {
   background: #f4f4f4; }
@@ -36,7 +39,7 @@ body {
   font-family: "Catamaran", "Sans-serif";
   color: #444; }
 
-.site-header, .question-preview, .question-form {
+.site-header, .question-preview, .question-form, .question-new {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   background: #fff; }
 
@@ -45,23 +48,35 @@ li {
 
 button, .btn-accent {
   cursor: pointer; }
+  button:disabled, .btn-accent:disabled {
+    opacity: .75;
+    cursor: default; }
 
 .btn-accent {
   border-radius: 4px;
   width: 13em;
-  height: 4em; }
+  height: 4em;
+  font-size: .8em; }
 
 .btn-accent {
   background: #812296;
-  color: #fff;
-  font-family: "Chelsea Market"; }
+  font-weight: bold;
+  color: #fff; }
   .btn-accent:hover {
     background: #9327ab; }
+    .btn-accent:hover:disabled {
+      background: #812296; }
 
 input[type='radio'] {
   position: relative;
   top: -.15em;
   margin-right: 1em; }
+
+input[type='text'] {
+  font-size: 1em;
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 4px; }
 
 .site-header {
   display: flex;
@@ -91,7 +106,11 @@ input[type='radio'] {
   left: 0; }
   .loading svg {
     font-size: 1.95em;
+    color: rgba(129, 34, 150, 0.25);
     animation: spin 500ms linear infinite; }
+
+.spinning {
+  animation: spin 500ms linear infinite; }
 
 @keyframes spin {
   from {
@@ -144,25 +163,27 @@ input[type='radio'] {
     color: #fff;
     background: rgba(129, 34, 150, 0.45); }
 
-.question-preview, .question-form {
+.question-preview, .question-form, .question-new {
   padding: 2em;
   max-width: 40em;
   margin: 0 auto 1em auto; }
-  .question-preview h6, .question-form h6, .question-preview p, .question-form p {
+  .question-preview h4, .question-form h4, .question-new h4, .question-preview p, .question-form p, .question-new p {
     color: #444; }
-  .question-preview h6, .question-form h6 {
-    display: block;
-    font-size: .8em; }
-  .question-preview p, .question-form p {
+  .question-preview h4, .question-form h4, .question-new h4 {
+    display: block; }
+  .question-preview p, .question-form p, .question-new p {
     display: inline-block;
     font-size: 1.25em; }
-    .question-preview p svg, .question-form p svg {
+    .question-preview p svg, .question-form p svg, .question-new p svg {
       position: relative;
       margin-left: .35em;
       top: .15em; }
-  .question-preview .chosen p, .question-form .chosen p {
+  .question-preview .chosen p, .question-form .chosen p, .question-new .chosen p {
     color: #812296;
     font-weight: bold; }
+  .question-preview .user-badge, .question-form .user-badge, .question-new .user-badge {
+    position: relative;
+    top: -.55em; }
 
 .question-preview {
   display: flex;
@@ -173,13 +194,13 @@ input[type='radio'] {
   display: flex;
   justify-content: space-between;
   align-items: top;
-  margin-top: 1em; }
+  margin-top: 4.5em; }
   .question-form.answered input {
     display: none; }
   .question-form.answered label {
     cursor: default; }
   .question-form.answered .question-meta {
-    margin-left: 1em;
+    display: block;
     font-size: .8em; }
   .question-form svg {
     display: none; }
@@ -187,3 +208,21 @@ input[type='radio'] {
     margin-top: 1em; }
   .question-form .chosen svg {
     display: inline-block; }
+
+.question-new {
+  margin-top: 4.5em; }
+  .question-new form {
+    display: flex;
+    margin-bottom: 1em;
+    justify-content: stretch; }
+    .question-new form .left {
+      flex: auto; }
+      .question-new form .left span {
+        color: #bbb; }
+    .question-new form .right {
+      margin-left: auto;
+      padding-left: 2em; }
+    .question-new form input {
+      display: block;
+      width: 100%;
+      margin: .5em 0; }

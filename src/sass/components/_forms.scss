@@ -1,11 +1,16 @@
 %basic-button {
   cursor: pointer;
+  &:disabled {
+    opacity: .75;
+    cursor: default;
+  }
 }
 
 %fancy-button {
   border-radius: 4px;
   width: 13em;
   height: 4em;
+  @include ms-1;
 }
 
 button {
@@ -16,10 +21,13 @@ button {
   @extend button;
   @extend %fancy-button;
   background: $primary-accent;
+  font-weight: bold;
   color: #fff;
-  font-family: $accent-font;
   &:hover {
     background:lighten($primary-accent, 5%);
+    &:disabled {
+      background: $primary-accent;
+    }
   }
 }
 
@@ -27,4 +35,11 @@ input[type='radio'] {
   position: relative;
   top: -.15em;
   margin-right: 1em;
+}
+
+input[type='text'] {
+  @include ms0;
+  padding: 0.5em;
+  border: 1px solid $light-gray;
+  border-radius: 4px;
 }
