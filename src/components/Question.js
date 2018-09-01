@@ -1,9 +1,10 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 import classNames from 'classnames/bind'
 import UserBadge from './UserBadge'
 import { answerAndSaveQuestion } from '../actions'
-import { FaCheck } from 'react-icons/fa'
+import { FaCheck, FaLongArrowAltLeft } from 'react-icons/fa'
 
 class Question extends Component {
   state = {
@@ -83,7 +84,14 @@ class Question extends Component {
             </li>
           </ul>
           {!questionAnswered && (
-            <button className='btn-accent' onClick={this.onAnswerButton} disabled={answerButtonDisabled} >Final Answer!</button>
+            <button className='btn-accent' onClick={this.onAnswerButton} disabled={answerButtonDisabled}>Final Answer!</button>
+          )}
+          {questionAnswered && (
+            <Link to='/'>
+              <button className='btn-accent'>
+                <FaLongArrowAltLeft /> More Questions!
+              </button>
+            </Link>
           )}
         </div>
         {authedUser && (
