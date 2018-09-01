@@ -10,22 +10,17 @@ import LeaderBoard from './LeaderBoard'
 import NotFound from './NotFound'
 import Loading from './Loading'
 import {
-  _getUsers,
-  _getQuestions
-} from '../utils/_DATA'
-import {
-  receiveUsers,
-  receiveQuestions
+  fetchUsers,
+  fetchQuestions
 } from '../actions'
 
 class App extends Component {
   componentDidMount() {
-    _getUsers().then(res => {
-      this.props.dispatch(receiveUsers(res))
-    })
-    _getQuestions().then(res => {
-      this.props.dispatch(receiveQuestions(res))
-    })
+    // Populate store with users from DB
+    this.props.dispatch(fetchUsers())
+
+    // Populate store with questions from DB
+    this.props.dispatch(fetchQuestions())
   }
 
   render() {
