@@ -75,8 +75,8 @@ class Question extends Component {
                   {question.optionTwo.text}
                   {votedFor === 'optionTwo' && (
                     <Fragment>
-                      <FaCheck /><span className='answer-counts'>{votesForTwo} out of {votesForOne + votesForTwo}</span>
-                      <span className='question-meta answer-percentage'>{Math.floor(votesForTwo / (votesForOne + votesForTwo) * 100)}% of users chose this</span>
+                      <FaCheck />
+                      <span className='question-meta'>{Math.floor(votesForOne / (votesForOne + votesForTwo) * 100)}% ({votesForOne} out of {votesForOne + votesForTwo} users) chose this</span>
                     </Fragment>
                   )}
                 </p>
