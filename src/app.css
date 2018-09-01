@@ -40,11 +40,11 @@ body {
   font-family: "Catamaran", "Sans-serif";
   color: #444; }
 
-.site-header, .lb-container, .signin-container, .question-preview, .question-form, .question-new {
+.site-header, .lb-container, .notfound, .signin-container, .question-preview, .question-form, .question-new {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   background: #fff; }
 
-.lb-container, .signin-container, .question-preview, .question-form, .question-new {
+.lb-container, .notfound, .signin-container, .question-preview, .question-form, .question-new {
   max-width: 40em;
   margin-left: auto;
   margin-right: auto; }
@@ -196,6 +196,15 @@ select {
       color: #444; }
     .site-nav li a:hover {
       color: #444; }
+
+.notfound {
+  margin-top: 4.5em;
+  padding: 2em;
+  text-align: center; }
+  .notfound h1 {
+    margin-bottom: 1em; }
+  .notfound a {
+    font-weight: bold; }
 
 .signin-container {
   margin-top: 8em;

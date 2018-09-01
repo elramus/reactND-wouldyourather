@@ -1,6 +1,6 @@
 import C from '../utils/constants'
 
-const authedUser = (state = null, action) => {
+const authedUser = (state = 'johndoe', action) => {
   switch (action.type) {
     case C.AUTH_USER:
       return action.userId

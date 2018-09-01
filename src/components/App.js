@@ -7,6 +7,7 @@ import QuestionList from './QuestionList';
 import Question from './Question'
 import NewQuestion from './NewQuestion'
 import LeaderBoard from './LeaderBoard'
+import NotFound from './NotFound'
 import Loading from './Loading'
 import {
   _getUsers,
@@ -31,7 +32,7 @@ class App extends Component {
     const { authedUser, questions } = this.props
 
     if (authedUser === null) {
-      return  <SignIn />
+      return <SignIn />
     }
 
     if (Object.keys(questions).length === 0) {
@@ -44,9 +45,14 @@ class App extends Component {
           <Header />
           <Switch>
             <Route path='/' exact component={QuestionList} />
-            <Route path='/question/:questionId' component={Question} />
             <Route path='/new' component={NewQuestion} />
             <Route path='/leaderboard' component={LeaderBoard} />
+            <Route path='/question/:questionId' render={(props) => (
+              !this.props.questions[props.match.params.questionId]
+                ? <NotFound />
+                : <Question />
+            )} />
+            <Route component={NotFound} />
           </Switch>
         </Fragment>
       </BrowserRouter>

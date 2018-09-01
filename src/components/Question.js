@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import classNames from 'classnames/bind'
 import UserBadge from './UserBadge'
 import { answerAndSaveQuestion } from '../actions'
@@ -120,4 +120,4 @@ function mapStateToProps({ authedUser, questions }, { match }) {
   }
 }
 
-export default connect(mapStateToProps)(Question)
+export default withRouter(connect(mapStateToProps)(Question))

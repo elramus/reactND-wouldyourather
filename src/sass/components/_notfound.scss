@@ -1,0 +1,13 @@
+.notfound {
+  @extend %card;
+  @extend %outer-container;
+  margin-top: 4.5em;
+  padding: 2em;
+  text-align: center;
+  h1 {
+    margin-bottom: 1em;
+  }
+  a {
+    font-weight: bold;
+  }
+}
