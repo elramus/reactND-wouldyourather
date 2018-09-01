@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import classNames from 'classnames/bind'
 import UserBadge from './UserBadge'
-import { answerQuestion } from '../actions'
+import { answerAndSaveQuestion } from '../actions'
 import { FaCheck } from 'react-icons/fa'
 
 class Question extends Component {
@@ -17,7 +17,7 @@ class Question extends Component {
   }
 
   onAnswerButton = () => {
-    this.props.dispatch(answerQuestion(this.props.authedUser, this.props.question.id, this.state.selectedOption))
+    this.props.dispatch(answerAndSaveQuestion(this.props.authedUser, this.props.question.id, this.state.selectedOption))
   }
 
   render() {

@@ -1,0 +1,16 @@
+.signin-container {
+  @extend %card;
+  @extend %outer-container;
+  margin-top: 8em;
+  padding: 2em;
+  text-align:center;
+  h1 {
+    margin-bottom: 2em;
+  }
+  p {
+    margin-bottom: 1em;
+  }
+  select {
+    margin-bottom: 1em;
+  }
+}

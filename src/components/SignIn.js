@@ -19,18 +19,20 @@ class SignIn extends Component {
 
   render() {
     const { users } = this.props
+    const isButtonDisabled = this.state.selectedUser === 'default'
 
     return (
-      <div>
+      <div className='signin-container'>
         <h1>Would You Rather?</h1>
-        <h4>First things first. Who are you?</h4>
+        <p>First things first. Who are you?</p>
         <select value={this.state.selectedUser} onChange={this.onUserDropdownChange}>
           <option value='default' disabled>Select User</option>
           {Object.keys(users).map(id =>
             <option key={id} value={users[id].id}>{users[id].name}</option>
           )}
         </select>
-        <button onClick={this.onGoClick}>Go!</button>
+        <br />
+        <button className='btn-accent' disabled={isButtonDisabled} onClick={this.onGoClick}>Go!</button>
       </div>
     )
   }

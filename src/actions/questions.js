@@ -21,13 +21,13 @@ export function answerQuestion(userId, questionId, option) {
   }
 }
 
-export function answerAndSaveQuestion(userId, questionId, option) {
+export function answerAndSaveQuestion(authedUser, qid, answer) {
   return (dispatch) => {
     // Save answer in DB
-    _saveQuestionAnswer({ userId, questionId, option })
+    _saveQuestionAnswer({ authedUser, qid, answer })
 
     // Save answer in store
-    dispatch(answerQuestion(userId, questionId, option))
+    dispatch(answerQuestion(authedUser, qid, answer))
   }
 }
 

@@ -19,10 +19,10 @@
 }
 
 %question {
+  @extend %outer-container;
   @extend %card;
   padding: 2em;
-  max-width: 40em;
-  margin: 0 auto 1em auto;
+  margin-bottom: 1em;
   h4, p {
     color: $dark-gray;
   }
