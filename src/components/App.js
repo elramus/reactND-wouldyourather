@@ -45,7 +45,7 @@ class App extends Component {
           <Header />
           <Switch>
             <Route path='/' exact component={QuestionList} />
-            <Route path='/new' component={NewQuestion} />
+            <Route path='/add' component={NewQuestion} />
             <Route path='/leaderboard' component={LeaderBoard} />
             <Route path='/question/:questionId' render={(props) => (
               !this.props.questions[props.match.params.questionId]
