@@ -1,22 +1,16 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
-class UserBadge extends Component {
-  render() {
-    const { user } = this.props
-
-    return (
-      <div className='user-badge'>
-        <Link to='/leaderboard'>
-          <span>{user.name}</span>
-          <div className='avatar' style={{'backgroundImage': `url('${user.avatarURL}')`}}></div>
-        </Link>
-      </div>
-    )
-  }
-}
+const UserBadge = ({ user }) => (
+  <div className='user-badge'>
+    <Link to='/leaderboard'>
+      <span>{user.name}</span>
+      <div className='avatar' style={{'backgroundImage': `url('${user.avatarURL}')`}}></div>
+    </Link>
+  </div>
+)
 
 function mapStateToProps({ users }, ownProps) {
   return {
