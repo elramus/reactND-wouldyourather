@@ -1,9 +1,12 @@
 .user-badge {
-  display: flex;
-  align-items: center;
+  a {
+    display: flex;
+    align-items: center;
+  }
   span {
     text-transform: uppercase;
     @include ms-1;
+    color: $dark-gray;
   }
   .avatar {
     display: inline-block;

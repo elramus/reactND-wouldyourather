@@ -2,7 +2,7 @@ let users = {
   sarahedo: {
     id: 'sarahedo',
     name: 'Sarah Edo',
-    avatarURL: 'https://i.ebayimg.com/images/g/cBMAAOSw44BYZGiJ/s-l300.jpg',
+    avatarURL: 'https://attpac-website-assets.s3.amazonaws.com/assets/Image/5364-fitandcrop-660x365.jpg',
     answers: {
       "8xf0y6ziyjabvozdd253nd": 'optionOne',
       "6ni6ok3ym7mf1p33lnez": 'optionOne',
@@ -14,7 +14,7 @@ let users = {
   tylermcginnis: {
     id: 'tylermcginnis',
     name: 'Tyler McGinnis',
-    avatarURL: 'https://nerdist.com/wp-content/uploads/2016/02/Yoda.jpg',
+    avatarURL: 'https://cdn10.phillymag.com/wp-content/uploads/sites/3/2018/03/joe-biden-fist-900x600.jpg',
     answers: {
       "vthrdm985a262al8qx3do": 'optionOne',
       "xj352vofupe1dqz9emx13r": 'optionTwo',
@@ -24,7 +24,7 @@ let users = {
   johndoe: {
     id: 'johndoe',
     name: 'John Doe',
-    avatarURL: 'http://static1.squarespace.com/static/57bc4302f5e23115c191f016/57bfb747f5e231226986071c/580b602db3db2b29f4f49b49/1477234645946/Luke+Skywalker.png?format=1000w',
+    avatarURL: 'https://pbs.twimg.com/profile_images/822547732376207360/5g0FC8XX_400x400.jpg',
     answers: {
       "xj352vofupe1dqz9emx13r": 'optionOne',
       "vthrdm985a262al8qx3do": 'optionTwo',

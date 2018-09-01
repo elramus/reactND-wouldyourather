@@ -1,8 +1,14 @@
 %basic-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   &:disabled {
     opacity: .75;
     cursor: default;
+  }
+  svg {
+    margin: 0 .25em;
   }
 }
 

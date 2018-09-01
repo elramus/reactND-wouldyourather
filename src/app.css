@@ -53,10 +53,15 @@ li {
   list-style-type: none; }
 
 button, .btn-accent {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer; }
   button:disabled, .btn-accent:disabled {
     opacity: .75;
     cursor: default; }
+  button svg, .btn-accent svg {
+    margin: 0 .25em; }
 
 .btn-accent {
   border-radius: 4px;
@@ -203,20 +208,23 @@ select {
   .signin-container select {
     margin-bottom: 1em; }
 
-.user-badge {
+.user-badge a {
   display: flex;
   align-items: center; }
-  .user-badge span {
-    text-transform: uppercase;
-    font-size: .8em; }
-  .user-badge .avatar {
-    display: inline-block;
-    width: 2.5em;
-    height: 2.5em;
-    border-radius: 100%;
-    background-size: cover;
-    background-position: center center;
-    margin-left: 1em; }
+
+.user-badge span {
+  text-transform: uppercase;
+  font-size: .8em;
+  color: #444; }
+
+.user-badge .avatar {
+  display: inline-block;
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 100%;
+  background-size: cover;
+  background-position: center center;
+  margin-left: 1em; }
 
 .question-type-filter {
   text-align: center; }
@@ -249,9 +257,15 @@ select {
       position: relative;
       margin-left: .35em;
       top: .15em; }
-  .question-preview .chosen p, .question-form .chosen p, .question-new .chosen p {
-    color: #812296;
-    font-weight: bold; }
+  .question-preview .chosen, .question-form .chosen, .question-new .chosen {
+    position: relative;
+    left: -.5em;
+    background: rgba(129, 34, 150, 0.15);
+    padding: .25em .5em;
+    border-radius: 3px; }
+    .question-preview .chosen p, .question-form .chosen p, .question-new .chosen p {
+      color: #812296;
+      font-weight: bold; }
   .question-preview .user-badge, .question-form .user-badge, .question-new .user-badge {
     position: relative;
     top: -.55em; }
@@ -273,10 +287,8 @@ select {
   .question-form.answered .question-meta {
     display: block;
     font-size: .8em; }
-  .question-form svg {
-    display: none; }
   .question-form button {
-    margin-top: 1em; }
+    margin-top: 3em; }
   .question-form .chosen svg {
     display: inline-block; }
 
