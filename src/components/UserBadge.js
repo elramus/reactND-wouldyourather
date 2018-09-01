@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
 class UserBadge extends Component {
@@ -8,8 +9,10 @@ class UserBadge extends Component {
 
     return (
       <div className='user-badge'>
-        <span>{user.name}</span>
-        <div className='avatar' style={{'backgroundImage': `url('${user.avatarURL}')`}}></div>
+        <Link to='/leaderboard'>
+          <span>{user.name}</span>
+          <div className='avatar' style={{'backgroundImage': `url('${user.avatarURL}')`}}></div>
+        </Link>
       </div>
     )
   }
